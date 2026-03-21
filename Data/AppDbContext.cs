@@ -20,5 +20,20 @@ namespace Dating_App.Data
         /// operations on <see cref="AppUser"/> entities. Use this property to query, add, update, or delete users in
         /// the database.</remarks>
         public virtual DbSet<AppUser> Users { get; set; }
+
+
+        /// <summary>
+        /// Gets or sets the collection of members in the database.
+        /// </summary>
+        /// <remarks>Use this property to perform CRUD operations on the <see cref="Member"/> entities.
+        /// Changes to the entities in this  collection are tracked by the context and can be persisted to the database
+        /// by calling <c>SaveChanges</c>.</remarks>
+        public DbSet<Member> Members { get; set; }
+
+
+        /// <summary>
+        /// Gets or sets the collection of photos stored in the database.
+        /// </summary>
+        public DbSet<Photo> Photos { get; set; }
     }
 }

@@ -1,4 +1,6 @@
-﻿namespace Dating_App.Entities
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace Dating_App.Entities
 {
     public class AppUser
     {
@@ -19,5 +21,24 @@
         /// Gets or sets the email address associated with the object.
         /// </summary>
         public required string Email { get; set; }
+
+        /// <summary>
+        /// Gets or sets the URL of the image associated with this entity.
+        /// </summary>
+        public string? ImageUrl { get; set; }
+
+        /// <summary>
+        /// Gets or sets the hashed representation of the user's password.
+        /// </summary>
+        public byte[] PasswordHash { get; set; }
+
+        /// <summary>
+        /// Gets or sets the cryptographic salt used for hashing the password.
+        /// </summary>
+        public byte[] PasswordSalt { get; set; }
+
+
+        // Navigation property
+        public Member Member { get; set; } = null!;
     }
 }
